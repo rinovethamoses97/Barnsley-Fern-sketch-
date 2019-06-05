@@ -30,12 +30,13 @@ function drawPoint(x,y){
     var xmap=map(x,-2.1820,2.6558,0,width);
     var ymap=map(y,0,9.9983,height,0);
     stroke(255);
-    strokeWeight(4);
     point(xmap,ymap);
 }
 function draw(){
-    drawPoint(x,y);
-    var next=nextPoint(x,y);
-    x=next[0];
-    y=next[1];
+    for(var i=0;i<100;i++){
+        drawPoint(x,y);
+        var next=nextPoint(x,y);
+        x=next[0];
+        y=next[1];
+    }
 }
