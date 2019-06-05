@@ -6,7 +6,7 @@ function setup(){
 }
 function nextPoint(x,y){
     var nextx;
-    var mexty;
+    var nexty;
     var r=random(1);
     if(r<0.01){
         nextx=0;
@@ -26,11 +26,16 @@ function nextPoint(x,y){
     }
     return [nextx,nexty];
 }
+function drawPoint(x,y){
+    var xmap=map(x,-2.1820,2.6558,0,width);
+    var ymap=map(y,0,9.9983,height,0);
+    stroke(255);
+    strokeWeight(4);
+    point(xmap,ymap);
+}
 function draw(){
-    x=map(x,-2.1820,2.6558,0,width);
-    y=map(y,0,9,9983,height,0);
-    point(x,y);
+    drawPoint(x,y);
     var next=nextPoint(x,y);
     x=next[0];
-    y=next[i];
+    y=next[1];
 }
